@@ -17,11 +17,11 @@ public class Pizza_Controller : MonoBehaviour {
     public Material burnt;
     public Material cooked;
     public GameObject pizza;
-    public Topping_Spawn tspawn;
+    //public Topping_Spawn tspawn;
 
 	void Awake () {
         S = this;
-        tspawn = GetComponent<Topping_Spawn>();
+        //tspawn = GetComponent<Topping_Spawn>();
     }
 
 	void Start () {
@@ -42,13 +42,13 @@ public class Pizza_Controller : MonoBehaviour {
             case "sauce":
                 pizza.GetComponent<Renderer>().material = sauce;
                 Destroy(other);
-                tspawn.S.spawn = 0;
+                //tspawn.S.spawn = 0;
                 //active = sauce;
                 break;
             case "cheese":
                 pizza.GetComponent<Renderer>().material = cheese;
                 Destroy(other);
-                tspawn.S.spawn = 0;
+                //tspawn.S.spawn = 0;
                 //active = cheese;
                 break;
         }

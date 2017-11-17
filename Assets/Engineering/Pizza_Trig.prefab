@@ -218,7 +218,7 @@ MonoBehaviour:
   dough: {fileID: 2100000, guid: 6f6cb6df02b1695498d011da469a5693, type: 2}
   burnt: {fileID: 0}
   cooked: {fileID: 0}
-  pizza: {fileID: 4224473449625958}
+  pizza: {fileID: 1718546434451164}
 --- !u!114 &114585783692297868
 MonoBehaviour:
   m_ObjectHideFlags: 1

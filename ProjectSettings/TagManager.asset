@@ -13,6 +13,11 @@ TagManager:
   - mushrooms
   - bacon
   - dough
+  - ts
+  - ds
+  - button
+  - tbutton
+  - dbutton
   layers:
   - Default
   - TransparentFX
