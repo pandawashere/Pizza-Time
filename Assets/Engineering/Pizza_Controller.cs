@@ -16,17 +16,18 @@ public class Pizza_Controller : MonoBehaviour {
     public Material dough;
     public Material burnt;
     public Material cooked;
-    //public GameObject trigger;
-
+    public GameObject pizza;
+    public Topping_Spawn tspawn;
 
 	void Awake () {
         S = this;
-
+        tspawn = GetComponent<Topping_Spawn>();
     }
 
 	void Start () {
-        GetComponent<Renderer>().material = dough;
-        active = dough;
+        pizza.GetComponent<Renderer>().material = dough;
+        //active = dough;
+        //pizza = transform.Find("Pizza");
     }
 	
 	
@@ -35,15 +36,20 @@ public class Pizza_Controller : MonoBehaviour {
 	}
 
     void OnCollisionEnter(Collision col) {
+        print ("col");
         GameObject other = col.gameObject;
         switch (other.tag) {
             case "sauce":
-                GetComponent<Renderer>().material = sauce;
-                active = sauce;
+                pizza.GetComponent<Renderer>().material = sauce;
+                Destroy(other);
+                tspawn.S.spawn = 0;
+                //active = sauce;
                 break;
             case "cheese":
-                GetComponent<Renderer>().material = cheese;
-                active = cheese;
+                pizza.GetComponent<Renderer>().material = cheese;
+                Destroy(other);
+                tspawn.S.spawn = 0;
+                //active = cheese;
                 break;
         }
     }

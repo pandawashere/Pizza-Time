@@ -1,10 +1,22 @@
 fileFormatVersion: 2
 guid: f36a26486add6724a806e244db406ed8
-timeCreated: 1510709796
+timeCreated: 1510854865
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - S: {instanceID: 0}
+  - active: {instanceID: 0}
+  - sauce: {fileID: 2100000, guid: 3f90d6869145ca648804c9fd1c55e4a6, type: 2}
+  - cheese: {fileID: 2100000, guid: 6ded735e03e5f684780b86b9dc6fbdcd, type: 2}
+  - roni: {instanceID: 0}
+  - peppers: {instanceID: 0}
+  - mushrooms: {instanceID: 0}
+  - bacon: {instanceID: 0}
+  - dough: {fileID: 2100000, guid: 6f6cb6df02b1695498d011da469a5693, type: 2}
+  - burnt: {instanceID: 0}
+  - cooked: {instanceID: 0}
+  - pizza: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 23990638577736240}
   - component: {fileID: 65820164720856960}
   m_Layer: 0
-  m_Name: Pizza (1)
+  m_Name: Pizza
   m_TagString: dough
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,7 +59,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1718546434451164}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.018, y: -0.27078998, z: -0.07}
+  m_LocalPosition: {x: 0.018, y: -0.27078998, z: -0.009}
   m_LocalScale: {x: 0.9620716, y: 0.30941963, z: 0.92622286}
   m_Children: []
   m_Father: {fileID: 4396764032132278}
@@ -218,6 +218,7 @@ MonoBehaviour:
   dough: {fileID: 2100000, guid: 6f6cb6df02b1695498d011da469a5693, type: 2}
   burnt: {fileID: 0}
   cooked: {fileID: 0}
+  pizza: {fileID: 4224473449625958}
 --- !u!114 &114585783692297868
 MonoBehaviour:
   m_ObjectHideFlags: 1
