@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Button_collider : MonoBehaviour {
 
-    
+    public int moveTime = 5;
+
     public GameObject button;
 
     private Vector3 oldPosition;
@@ -24,6 +25,10 @@ public class Button_collider : MonoBehaviour {
 		
 	}
 
+    //public void moveDough(GameObject top) {
+
+    //}
+
     private void OnCollisionEnter(Collision coll) {
         GameObject col = coll.gameObject;
         if (col.tag == "tbutton") {
@@ -33,8 +38,12 @@ public class Button_collider : MonoBehaviour {
         }
         if (col.tag == "dbutton") {
             Instantiate(topping, spawner.transform.position, spawner.transform.rotation);
+            //for (int i = 0; i <= 5; i++) {
+              //  moveDough(topping);
+            //}
             button.transform.position = oldPosition;
             button.transform.rotation = oldRotation;
+
         }
     }
 

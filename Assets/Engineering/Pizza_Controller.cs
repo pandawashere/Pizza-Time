@@ -34,16 +34,13 @@ public class Pizza_Controller : MonoBehaviour {
     public bool ppeppers = false;
     public bool pmush = false;
     public bool pbacon = false;
-    //public Topping_Spawn tspawn;
 
     void Awake () {
         S = this;
-        //tspawn = GetComponent<Topping_Spawn>();
     }
 
 	void Start () {
         pizza.GetComponent<Renderer>().material = dough;
-        //pizza = transform.Find("Pizza");
     }
 	
 	
@@ -61,11 +58,13 @@ public class Pizza_Controller : MonoBehaviour {
                 pizza.GetComponent<Renderer>().material = sauce;
                 Destroy(other);
                 psauce = true;
+                Orders.pizza1 = Orders.pizza1 + "s";
                 break;
             case "cheese":
                 pizza.GetComponent<Renderer>().material = cheese;
                 Destroy(other);
                 pcheese = true;
+                Orders.pizza1 = Orders.pizza1 + "c";
                 break;
         }
     }
