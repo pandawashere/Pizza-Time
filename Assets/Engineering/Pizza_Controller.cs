@@ -42,12 +42,14 @@ public class Pizza_Controller : MonoBehaviour {
             case "sauce":
                 pizza.GetComponent<Renderer>().material = sauce;
                 Destroy(other);
+				Orders.pizza1 = Orders.pizza1 + "s";
                 //tspawn.S.spawn = 0;
                 //active = sauce;
                 break;
             case "cheese":
                 pizza.GetComponent<Renderer>().material = cheese;
                 Destroy(other);
+				Orders.pizza1 = Orders.pizza1 + "c";
                 //tspawn.S.spawn = 0;
                 //active = cheese;
                 break;
