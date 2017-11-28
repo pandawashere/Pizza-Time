@@ -208,17 +208,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   S: {fileID: 0}
-  active: {fileID: 0}
   sauce: {fileID: 2100000, guid: 3f90d6869145ca648804c9fd1c55e4a6, type: 2}
   cheese: {fileID: 2100000, guid: 6ded735e03e5f684780b86b9dc6fbdcd, type: 2}
+  sauceandcheese: {fileID: 2100000, guid: 9c97b43a3e3a64446989c2abb3c82a63, type: 2}
   roni: {fileID: 0}
+  scr: {fileID: 0}
+  cr: {fileID: 0}
   peppers: {fileID: 0}
+  scp: {fileID: 0}
+  scrp: {fileID: 0}
+  cp: {fileID: 0}
+  crp: {fileID: 0}
   mushrooms: {fileID: 0}
+  scm: {fileID: 0}
+  scpm: {fileID: 0}
+  scrpm: {fileID: 0}
+  cpm: {fileID: 0}
+  crpm: {fileID: 0}
   bacon: {fileID: 0}
   dough: {fileID: 2100000, guid: 6f6cb6df02b1695498d011da469a5693, type: 2}
   burnt: {fileID: 0}
   cooked: {fileID: 0}
   pizza: {fileID: 1718546434451164}
+  psauce: 0
+  pcheese: 0
+  proni: 0
+  ppeppers: 0
+  pmush: 0
+  pbacon: 0
 --- !u!114 &114585783692297868
 MonoBehaviour:
   m_ObjectHideFlags: 1
