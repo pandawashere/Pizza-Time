@@ -1305,8 +1305,8 @@ MonoBehaviour:
   - {fileID: 4677822679639866}
   - {fileID: 4833341322124028}
   hands:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 114130316453964612}
+  - {fileID: 114650301590504318}
   - {fileID: 114323145529146742}
   headCollider: {fileID: 135077758489574154}
   rigSteamVR: {fileID: 1693418315563642}
