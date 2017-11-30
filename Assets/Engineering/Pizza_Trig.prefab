@@ -59,7 +59,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1286893884696010}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.37449157, y: 1.0850656, z: 3.8321655}
+  m_LocalPosition: {x: -0.8628261, y: 1.0200737, z: 3.8706965}
   m_LocalScale: {x: 0.40617263, y: 0.027223904, z: 0.4218934}
   m_Children:
   - {fileID: 4721578885789444}
@@ -221,25 +221,24 @@ MonoBehaviour:
   S: {fileID: 0}
   sauce: {fileID: 2100000, guid: 3f90d6869145ca648804c9fd1c55e4a6, type: 2}
   cheese: {fileID: 2100000, guid: 6ded735e03e5f684780b86b9dc6fbdcd, type: 2}
-  sauceandcheese: {fileID: 2100000, guid: 9c97b43a3e3a64446989c2abb3c82a63, type: 2}
   roni: {fileID: 2100000, guid: 678fc3ddeb3aa13428cb03eb17b57478, type: 2}
-  scr: {fileID: 0}
-  cr: {fileID: 0}
   peppers: {fileID: 2100000, guid: d20e4f70c23dcb74fafbc7dabceb5248, type: 2}
-  scp: {fileID: 0}
-  scrp: {fileID: 0}
-  cp: {fileID: 0}
-  crp: {fileID: 0}
   mushrooms: {fileID: 2100000, guid: d669564a1604d4c45b3856a8b920653d, type: 2}
-  scm: {fileID: 0}
-  scpm: {fileID: 0}
-  scrpm: {fileID: 0}
-  cpm: {fileID: 0}
-  crpm: {fileID: 0}
   bacon: {fileID: 2100000, guid: 59687f26b5318864aa76a58828f7e565, type: 2}
+  roniandbacon: {fileID: 2100000, guid: 9c97b43a3e3a64446989c2abb3c82a63, type: 2}
+  roniandpeppers: {fileID: 2100000, guid: 0f49a485ebf30c84da4bec33d1dfc916, type: 2}
+  roniandmush: {fileID: 2100000, guid: 75915959cc774a54f9b51651baf04dbb, type: 2}
+  peppersandmush: {fileID: 2100000, guid: fa34795184515e34e9ef1099a989ef85, type: 2}
+  peppersandbacon: {fileID: 2100000, guid: 9b8e03b3b20d6c14e83c365af210bbdc, type: 2}
+  baconandmush: {fileID: 2100000, guid: 6dcedba981116124c935d51d1347d3d2, type: 2}
+  roniandbaconandpep: {fileID: 2100000, guid: d758f4b96d6a21b4da6431beb70c058f, type: 2}
+  roniandbaconandmush: {fileID: 2100000, guid: 88674fda0f073c340aca78427e64e639, type: 2}
+  roniandPepandmush: {fileID: 2100000, guid: 54a0c8c3e2566524ebe08468e819df44, type: 2}
+  mushandbaconandpep: {fileID: 2100000, guid: 29bba7692854b4d4ca98927d17926114, type: 2}
+  theworks: {fileID: 2100000, guid: 7f9b84c6fdef53a42b3ad2a09ebfe5d7, type: 2}
   dough: {fileID: 2100000, guid: 6f6cb6df02b1695498d011da469a5693, type: 2}
-  burnt: {fileID: 0}
-  cooked: {fileID: 0}
+  burnt: {fileID: 2100000, guid: 54a37c2f9882d694380d49d1f6e0059d, type: 2}
+  cooked: {fileID: 2100000, guid: 87506b584c8d0514fb3e38568f789f10, type: 2}
   pizza: {fileID: 1418519234521700}
   psauce: 0
   pcheese: 0
