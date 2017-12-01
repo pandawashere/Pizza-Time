@@ -4,25 +4,27 @@ using UnityEngine;
 
 public class FinishBox : MonoBehaviour {
 
+	private Pizza_Controller pizzainfo;
+	public GameObject pizzainstance;
+
+	void Update () {
+
+		pizzainfo = pizzainstance.GetComponent<Pizza_Controller> ();
+		pizzainfo = GameObject.Find("Pizza_Trig").GetComponent<Pizza_Controller>();
+	}
+
 	void OnCollisionEnter (Collision col)
 	{
-		if (Orders.order1 == Orders.pizza1) {
-			Destroy (col.gameObject);
-			print ("Positive points!");
-			Orders.pizza1 = "d";
-		}
-		else if (Orders.order2 == Orders.pizza1){
-			Destroy (col.gameObject);
-			print("Positive points!");
-			Orders.pizza1 = "d";
-			//add positive points to point count
-		}
-		else {
-			Destroy (col.gameObject);
-			print ("negative points");
-			Orders.pizza1 = "d";
-			//subtract from point count for mistake here
+			for (int i = 0; i < Ticket_Spawn.order.Length; i++) {
+			if (Ticket_Spawn.order [i] == pizzainfo.pizzatype) {
+					Destroy (col.gameObject);
+					print ("yay");
+				}
+			}
+			//if if above fails strikes
+
+
 		}
 
-	}
+
 }

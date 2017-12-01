@@ -18,6 +18,7 @@ TagManager:
   - button
   - tbutton
   - dbutton
+  - Ticket
   layers:
   - Default
   - TransparentFX

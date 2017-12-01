@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 114482963456780368}
   - component: {fileID: 114842045873028986}
   - component: {fileID: 114707394199905600}
+  - component: {fileID: 114101688727043178}
   m_Layer: 0
   m_Name: Pizza_Trig
   m_TagString: dough
@@ -196,6 +197,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.4068303, y: 0.4068304, z: 0.025258416}
   m_Center: {x: 0, y: 0, z: 0.012629208}
+--- !u!114 &114101688727043178
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1286893884696010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15a8289107580c2489eb4c45a16e0b0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114482963456780368
 MonoBehaviour:
   m_ObjectHideFlags: 1
