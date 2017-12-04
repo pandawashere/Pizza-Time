@@ -19,47 +19,39 @@ public class Ticket_Spawn : MonoBehaviour {
 	public static string[] order;
 
 	void SpawnTicket(){
+		tickets[currentticket].SetActive(true);
 		switch (randticket) {
 		case 1:
 			//sauce pizza
-			tickets[currentticket].SetActive(true);
 			tickets[currentticket].GetComponent<Renderer> ().material = sauce_;
 			order[currentticket] = "sauce";
-			currentticket = currentticket + 1;
 			break;
 
 		case 2:
 			//cheese
-			tickets[currentticket].SetActive(true);
 			tickets[currentticket].GetComponent<Renderer> ().material = cheese_;
 			order[currentticket] = "cheese";
-			currentticket = currentticket + 1;
 			break;
 
 		case 3:
 			//roni
-			tickets[currentticket].SetActive(true);
 			tickets[currentticket].GetComponent<Renderer> ().material = roni_;
 			order[currentticket] = "roni";
-			currentticket = currentticket + 1;
 			break;
 
 		case 4:
 			//peppers
-			tickets[currentticket].SetActive(true);
 			tickets[currentticket].GetComponent<Renderer> ().material = peppers_;
 			order[currentticket] = "peppers";
-			currentticket = currentticket + 1;
 			break;
 
 		case 5:
 			//mush
-			tickets[currentticket].SetActive(true);
 			tickets[currentticket].GetComponent<Renderer> ().material = mushrooms_;
 			order[currentticket] = "mushrooms";
-			currentticket = currentticket + 1;
 			break;
 		}
+		currentticket = currentticket + 1;
 	}
 
 

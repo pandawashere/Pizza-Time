@@ -30,7 +30,7 @@ GameObject:
   - component: {fileID: 114101688727043178}
   m_Layer: 0
   m_Name: Pizza_Trig
-  m_TagString: dough
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60,7 +60,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1286893884696010}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.8628261, y: 1.0200737, z: 3.8706965}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.40617263, y: 0.027223904, z: 0.4218934}
   m_Children:
   - {fileID: 4721578885789444}
@@ -258,6 +258,7 @@ MonoBehaviour:
   ppeppers: 0
   pmush: 0
   pbacon: 0
+  pizzatype: dough
 --- !u!114 &114817944435956180
 MonoBehaviour:
   m_ObjectHideFlags: 1
