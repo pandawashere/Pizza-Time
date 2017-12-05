@@ -117,31 +117,27 @@ public class Pizza_Controller : MonoBehaviour
                 //pizza.GetComponent<Renderer>().material = sauce;
 			Destroy (other);
 			psauce = true;
-			AutoSpawn.spawnnum = AutoSpawn.spawnnum - 1;
 			break;
 		case "cheese":
                 //pizza.GetComponent<Renderer>().material = cheese;
 			Destroy (other);
 			if (psauce == true) {
 				pcheese = true;
-			}
-			AutoSpawn.spawnnum = AutoSpawn.spawnnum - 1;   
+			}   
 			break;
 		case "roni":
                 //pizza.GetComponent<Renderer>().material = roni;
 			Destroy (other);
 			if (psauce == true && pcheese == true) {
 				proni = true;
-			}
-			AutoSpawn.spawnnum = AutoSpawn.spawnnum - 1;  
+			} 
 			break;
 		case "peppers":
                 //pizza.GetComponent<Renderer>().material = peppers;
 			Destroy (other);
 			if (psauce == true && pcheese == true) {
 				ppeppers = true;
-			}
-			AutoSpawn.spawnnum = AutoSpawn.spawnnum - 1;  
+			} 
 			break;
 		case "mushrooms":
                 //pizza.GetComponent<Renderer>().material = mushrooms;
@@ -149,7 +145,6 @@ public class Pizza_Controller : MonoBehaviour
 			if (psauce == true && pcheese == true) {
 				pmush = true;
 			}
-			AutoSpawn.spawnnum = AutoSpawn.spawnnum - 1;  
 			break;
 		case "bacon":
                 //pizza.GetComponent<Renderer>().material = bacon;
@@ -157,7 +152,6 @@ public class Pizza_Controller : MonoBehaviour
 			if (psauce == true && pcheese == true) {
 				pbacon = true;
 			}
-			AutoSpawn.spawnnum = AutoSpawn.spawnnum - 1; 
 			break;
 		}
 	}

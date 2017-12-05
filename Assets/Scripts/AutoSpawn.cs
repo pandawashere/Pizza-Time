@@ -19,11 +19,8 @@ public class AutoSpawn : MonoBehaviour {
 	}
 	
 	void OnTriggerExit(Collider collision){
-		if (spawnnum < spawnlimit) {
 			if (collision.gameObject.tag == tagname) {
 				Instantiate (ingredient, spawnarea.transform.position, spawnarea.transform.rotation);
-				spawnnum = spawnnum + 1;
-			}
 		}
 	}
 

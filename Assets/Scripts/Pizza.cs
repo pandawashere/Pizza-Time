@@ -3,6 +3,9 @@ using System.Collections;
 
 public class Pizza : MonoBehaviour {
 
+	public GameObject pie;
+	public GameObject pieloc;
+
 	public class ingredients
 	{
 		public bool sauce;
@@ -15,9 +18,6 @@ public class Pizza : MonoBehaviour {
 		public bool dough;
 		public bool cooked;
 		public bool burnt;
-
-		public GameObject Piemodel;
-		public GameObject pielocation;
 	
 	//constructor
 		public ingredients ()
@@ -28,11 +28,20 @@ public class Pizza : MonoBehaviour {
 			peppers = false;
 			mushrooms = false;
 			bacon = false;
+
+
+
 		}
 	}
 
 
+	public ingredients pizzaInstance = new ingredients ();
+
+
 	void Start () {
-		public ingredients mypizza = new ingredients();
+
+
+
+		Debug.Log (pizzaInstance.sauce);
 	}
 }
