@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 56039c7f968361c4a86e633cbb006329
-timeCreated: 1512504999
+guid: 5ccef01090c0f0f40929c1ba42929b8f
+timeCreated: 1512498168
 licenseType: Pro
 ModelImporter:
   serializedVersion: 21
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Cheese Box
+    4300000: Cylinder001
     9500000: //RootNode
   materials:
     importMaterials: 1
