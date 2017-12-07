@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 23614825561280094}
   - component: {fileID: 65505962781245054}
   m_Layer: 0
-  m_Name: Pizza
+  m_Name: dough
   m_TagString: dough
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -352,7 +352,7 @@ MonoBehaviour:
   dough: {fileID: 2100000, guid: 6f6cb6df02b1695498d011da469a5693, type: 2}
   burnt: {fileID: 2100000, guid: 54a37c2f9882d694380d49d1f6e0059d, type: 2}
   cooked: {fileID: 2100000, guid: 87506b584c8d0514fb3e38568f789f10, type: 2}
-  pizza: {fileID: 1418519234521700, guid: 10b8a8a53ff37cb4a9f1238023cd5fcc, type: 2}
+  pizza: {fileID: 1730480822578348}
   psauce: 0
   pcheese: 0
   proni: 0
