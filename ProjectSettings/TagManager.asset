@@ -19,6 +19,12 @@ TagManager:
   - tbutton
   - dbutton
   - Ticket
+  - TeleportIgnore
+  - sbutton
+  - rbutton
+  - pbutton
+  - mbutton
+  - bbutton
   layers:
   - Default
   - TransparentFX

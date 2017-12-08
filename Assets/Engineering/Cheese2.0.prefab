@@ -184,7 +184,7 @@ MonoBehaviour:
   grabAttachMechanicScript: {fileID: 114618793858701258}
   secondaryGrabActionScript: {fileID: 114117317482290012}
   isUsable: 0
-  holdButtonToUse: 1
+  holdButtonToUse: 0
   useOnlyIfGrabbed: 0
   pointerActivatesUseAction: 0
   useOverrideButton: 0
