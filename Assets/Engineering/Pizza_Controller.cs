@@ -7,6 +7,7 @@ public class Pizza_Controller : MonoBehaviour
 {
 
 	public Pizza_Controller S;
+
 	public Material sauce;
 	public Material cheese;
 	public Material roni;
@@ -27,13 +28,16 @@ public class Pizza_Controller : MonoBehaviour
 	public Material dough;
 	public Material burnt;
 	public Material cooked;
+
 	public GameObject pizza;
+
 	public bool psauce = false;
 	public bool pcheese = false;
 	public bool proni = false;
 	public bool ppeppers = false;
 	public bool pmush = false;
 	public bool pbacon = false;
+
 	public string pizzatype = "dough";
 
 	void Awake ()
@@ -56,59 +60,71 @@ public class Pizza_Controller : MonoBehaviour
         if (psauce == true && pcheese != true && proni != true && pmush != true && pbacon != true && ppeppers != true) {
             pizza.GetComponent<Renderer>().material = sauce;
             pizzatype = "sauce";
-            //-----------------------------------------------------------------sauce--------------------------------------------------------------------------------------------------
+
         } else if (psauce == true && pcheese == true && proni != true && pmush != true && pbacon != true && ppeppers != true) {
             pizza.GetComponent<Renderer>().material = cheese;
             pizzatype = "cheese";
-            //-----------------------------------------------------------------cheese---------------------------------------------------------------------------------------------------------------
+
         } else if (psauce == true && pcheese == true && proni == true && pmush != true && pbacon != true && ppeppers != true) {
             pizza.GetComponent<Renderer>().material = roni;
             pizzatype = "roni";
-            //-----------------------------------------------------------------roni--------------------------------------------------------------------------------------------------------------
+
         } else if (psauce == true && pcheese == true && ppeppers == true && pmush != true && pbacon != true && proni != true) {
             pizza.GetComponent<Renderer>().material = peppers;
             pizzatype = "peppers";
-            //-----------------------------------------------------------------peppers-------------------------------------------------------------------------------------------------------------
+
         } else if (psauce == true && pcheese == true && pmush == true && proni != true && pbacon != true && ppeppers != true) {
             pizza.GetComponent<Renderer>().material = mushrooms;
             pizzatype = "mushrooms";
-            //-----------------------------------------------------------------mushroom------------------------------------------------------------------------------------------------------------
+
         } else if (psauce == true && pcheese == true && pbacon == true && pmush != true && proni != true && ppeppers != true) {
             pizza.GetComponent<Renderer>().material = bacon;
-            //-----------------------------------------------------------------bacon------------------------------------------------------------------------------------------------------------
+			pizzatype = "bacon";
+
         } else if (psauce == true && pcheese == true && proni == true && ppeppers == true && pbacon != true && pmush != true) {
             pizza.GetComponent<Renderer>().material = roniandpeppers;
-            //-----------------------------------------------------------------roni_peps------------------------------------------------------------------------------------------------------------
+			pizzatype = "roniandpeppers";
+
         } else if (psauce == true && pcheese == true && proni == true && pmush == true && ppeppers != true && ppeppers != true) {
             pizza.GetComponent<Renderer>().material = roniandmush;
-            //-----------------------------------------------------------------roni_mush------------------------------------------------------------------------------------------------------------
+			pizzatype = "roniandmush";
+
         } else if (psauce == true && pcheese == true && proni == true && pbacon == true && pmush != true && ppeppers != true) {
             pizza.GetComponent<Renderer>().material = roniandbacon;
-            //-----------------------------------------------------------------roni_Bacon------------------------------------------------------------------------------------------------------------
+			pizzatype = "roniandbacon";
+
         } else if (psauce == true && pcheese == true && pmush == true && ppeppers == true && pbacon != true && proni != true) {
             pizza.GetComponent<Renderer>().material = peppersandmush;
-            //-----------------------------------------------------------------pep_mush------------------------------------------------------------------------------------------------------------
+			pizzatype = "peppersandmush";
+
         } else if (psauce == true && pcheese == true && pbacon == true && ppeppers == true && proni != true && pmush != true) {
             pizza.GetComponent<Renderer>().material = peppersandbacon;
-            //-----------------------------------------------------------------pep_bacon------------------------------------------------------------------------------------------------------------
+			pizzatype = "peppersandbacon";
+
         } else if (psauce == true && pcheese == true && pmush == true && pbacon == true && proni != true && ppeppers != true) {
             pizza.GetComponent<Renderer>().material = baconandmush;
-            //-----------------------------------------------------------------mush_bac------------------------------------------------------------------------------------------------------------
+			pizzatype = "baconandmush";
+ 
         } else if (psauce == true && pcheese == true && proni == true && pbacon == true && ppeppers == true && pmush != true) {
             pizza.GetComponent<Renderer>().material = roniandbaconandpep;
-            //-----------------------------------------------------------------roni_bacon_pep------------------------------------------------------------------------------------------------------------
+			pizzatype = "roniandbaconandpep";
+
         } else if (psauce == true && pcheese == true && proni == true && pmush == true && pbacon == true && ppeppers != true) {
             pizza.GetComponent<Renderer>().material = roniandbaconandmush;
-            //-----------------------------------------------------------------roni_bacon_mush------------------------------------------------------------------------------------------------------------
+			pizzatype = "roniandbaconandmush";
+
         } else if (psauce == true && pcheese == true && proni == true && pmush == true && ppeppers == true && pbacon != true) {
             pizza.GetComponent<Renderer>().material = roniandPepandmush;
-            //-----------------------------------------------------------------roni_pep_mush------------------------------------------------------------------------------------------------------------
+			pizzatype = "roniandPepandmush";
+
         } else if (psauce == true && pcheese == true && pmush == true && pbacon == true && ppeppers == true && proni != true) {
             pizza.GetComponent<Renderer>().material = mushandbaconandpep;
-            //-----------------------------------------------------------------bac_mush_pep------------------------------------------------------------------------------------------------------------
+			pizzatype = "mushandbaconandpep";
+
         } else if (psauce == true && pcheese == true && proni == true && pmush == true && pbacon == true && ppeppers == true) {
             pizza.GetComponent<Renderer>().material = theworks;
-            //-----------------------------------------------------------------works------------------------------------------------------------------------------------------------------------
+			pizzatype = "theworks";
+
         }
     }
 
@@ -118,40 +134,34 @@ public class Pizza_Controller : MonoBehaviour
 		GameObject other = col.gameObject;
 		switch (other.tag) {
 		case "sauce":
-                //pizza.GetComponent<Renderer>().material = sauce;
 			Destroy (other);
 			psauce = true;
 			break;
 		case "cheese":
-                //pizza.GetComponent<Renderer>().material = cheese;
 			Destroy (other);
 			if (psauce == true) {
 				pcheese = true;
 			}   
 			break;
 		case "roni":
-                //pizza.GetComponent<Renderer>().material = roni;
 			Destroy (other);
 			if (psauce == true && pcheese == true) {
 				proni = true;
 			} 
 			break;
 		case "peppers":
-                //pizza.GetComponent<Renderer>().material = peppers;
 			Destroy (other);
 			if (psauce == true && pcheese == true) {
 				ppeppers = true;
 			} 
 			break;
 		case "mushrooms":
-                //pizza.GetComponent<Renderer>().material = mushrooms;
 			Destroy (other);
 			if (psauce == true && pcheese == true) {
 				pmush = true;
 			}
 			break;
 		case "bacon":
-                //pizza.GetComponent<Renderer>().material = bacon;
 			Destroy (other);
 			if (psauce == true && pcheese == true) {
 				pbacon = true;

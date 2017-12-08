@@ -1232,6 +1232,20 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
+  m_FalloffTable:
+    m_Table[0]: 0
+    m_Table[1]: 0
+    m_Table[2]: 0
+    m_Table[3]: 0
+    m_Table[4]: 0
+    m_Table[5]: 0
+    m_Table[6]: 0
+    m_Table[7]: 0
+    m_Table[8]: 0
+    m_Table[9]: 0
+    m_Table[10]: 0
+    m_Table[11]: 0
+    m_Table[12]: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
@@ -1485,6 +1499,20 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
+  m_FalloffTable:
+    m_Table[0]: 0
+    m_Table[1]: 0
+    m_Table[2]: 0
+    m_Table[3]: 0
+    m_Table[4]: 0
+    m_Table[5]: 0
+    m_Table[6]: 0
+    m_Table[7]: 0
+    m_Table[8]: 0
+    m_Table[9]: 0
+    m_Table[10]: 0
+    m_Table[11]: 0
+    m_Table[12]: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
@@ -1979,17 +2007,20 @@ MonoBehaviour:
   peppers: {fileID: 2100000, guid: d20e4f70c23dcb74fafbc7dabceb5248, type: 2}
   mushrooms: {fileID: 2100000, guid: d669564a1604d4c45b3856a8b920653d, type: 2}
   bacon: {fileID: 2100000, guid: 59687f26b5318864aa76a58828f7e565, type: 2}
-  trash: {fileID: 0}
-  turninbox: {fileID: 0}
-  pizza1: {fileID: 0}
-  pizza2: {fileID: 0}
-  pizza3: {fileID: 0}
-  pizza4: {fileID: 0}
-  pizza5: {fileID: 0}
-  pizza6: {fileID: 0}
-  pizza7: {fileID: 0}
-  pizza8: {fileID: 0}
-  pizza9: {fileID: 0}
+  roniandbacon: {fileID: 2100000, guid: 9c97b43a3e3a64446989c2abb3c82a63, type: 2}
+  roniandpeppers: {fileID: 2100000, guid: 0f49a485ebf30c84da4bec33d1dfc916, type: 2}
+  roniandmush: {fileID: 2100000, guid: 75915959cc774a54f9b51651baf04dbb, type: 2}
+  peppersandmush: {fileID: 2100000, guid: fa34795184515e34e9ef1099a989ef85, type: 2}
+  peppersandbacon: {fileID: 2100000, guid: 9b8e03b3b20d6c14e83c365af210bbdc, type: 2}
+  baconandmush: {fileID: 2100000, guid: 6dcedba981116124c935d51d1347d3d2, type: 2}
+  roniandbaconandpep: {fileID: 2100000, guid: d758f4b96d6a21b4da6431beb70c058f, type: 2}
+  roniandbaconandmush: {fileID: 2100000, guid: 88674fda0f073c340aca78427e64e639, type: 2}
+  roniandPepandmush: {fileID: 2100000, guid: 54a0c8c3e2566524ebe08468e819df44, type: 2}
+  mushandbaconandpep: {fileID: 2100000, guid: 29bba7692854b4d4ca98927d17926114, type: 2}
+  theworks: {fileID: 2100000, guid: 483110a781f98ce488273b51c976bcdf, type: 2}
+  dough: {fileID: 0}
+  burnt: {fileID: 0}
+  cooked: {fileID: 0}
   randticket: 0
   ticketnum: 5
   currentticket: 0
