@@ -333,8 +333,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cookTime: 0
-  doneTime: 2
-  burntTime: 4
+  doneTime: 10
+  burntTime: 20
   isCooked: 0
   isBurned: 0
   S: {fileID: 0}
