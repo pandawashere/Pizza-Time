@@ -28,6 +28,7 @@ GameObject:
   - component: {fileID: 114361258789003498}
   - component: {fileID: 114803211303434476}
   - component: {fileID: 114871956863159264}
+  - component: {fileID: 114940699626814832}
   m_Layer: 0
   m_Name: Pie2.0
   m_TagString: Untagged
@@ -285,7 +286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disableWhenIdle: 1
-  touchHighlightColor: {r: 1, g: 0.6827586, b: 0, a: 0}
+  touchHighlightColor: {r: 1, g: 0.5999999, b: 0, a: 0}
   allowedTouchControllers: 0
   ignoredColliders: []
   isGrabbable: 1
@@ -331,7 +332,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f36a26486add6724a806e244db406ed8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cookTime: 0
+  doneTime: 2
+  burntTime: 4
+  isCooked: 0
+  isBurned: 0
   S: {fileID: 0}
+  active: {fileID: 0}
   sauce: {fileID: 2100000, guid: 3f90d6869145ca648804c9fd1c55e4a6, type: 2}
   cheese: {fileID: 2100000, guid: 6ded735e03e5f684780b86b9dc6fbdcd, type: 2}
   roni: {fileID: 2100000, guid: 678fc3ddeb3aa13428cb03eb17b57478, type: 2}
@@ -360,3 +367,21 @@ MonoBehaviour:
   pmush: 0
   pbacon: 0
   pizzatype: dough
+--- !u!114 &114940699626814832
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1460158677564054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c08517e04830d6d44a13c5ea5f574181, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 1
+  unhighlightOnDisable: 1
+  thickness: 0.25
+  customOutlineModels:
+  - {fileID: 1730480822578348}
+  customOutlineModelPaths: []
+  enableSubmeshHighlight: 0

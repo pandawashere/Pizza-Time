@@ -5,9 +5,15 @@ using Valve.VR;
 
 public class Pizza_Controller : MonoBehaviour
 {
+    public float cookTime = 0;
+    public float doneTime = 10;
+    public float burntTime = 20;
+    public bool isCooked = false;
+    public bool isBurned = false;
 
 	public Pizza_Controller S;
 
+    public Material active;
 	public Material sauce;
 	public Material cheese;
 	public Material roni;
@@ -39,135 +45,141 @@ public class Pizza_Controller : MonoBehaviour
 	public bool pbacon = false;
 
 	public string pizzatype = "dough";
-
-	void Awake ()
-	{
-		S = this;
+    
+	void Start () {
+        S = this;
+        active = dough;
 	}
 
-	void Start ()
-	{
-		pizza.GetComponent<Renderer> ().material = dough;
-	}
-
-	
-	void Update ()
-	{
-
-	}
-
-    void toppingChange() {
-        if (psauce == true && pcheese != true && proni != true && pmush != true && pbacon != true && ppeppers != true) {
-            pizza.GetComponent<Renderer>().material = sauce;
-            pizzatype = "sauce";
-
-        } else if (psauce == true && pcheese == true && proni != true && pmush != true && pbacon != true && ppeppers != true) {
-            pizza.GetComponent<Renderer>().material = cheese;
-            pizzatype = "cheese";
-
-        } else if (psauce == true && pcheese == true && proni == true && pmush != true && pbacon != true && ppeppers != true) {
-            pizza.GetComponent<Renderer>().material = roni;
-            pizzatype = "roni";
-
-        } else if (psauce == true && pcheese == true && ppeppers == true && pmush != true && pbacon != true && proni != true) {
-            pizza.GetComponent<Renderer>().material = peppers;
-            pizzatype = "peppers";
-
-        } else if (psauce == true && pcheese == true && pmush == true && proni != true && pbacon != true && ppeppers != true) {
-            pizza.GetComponent<Renderer>().material = mushrooms;
-            pizzatype = "mushrooms";
-
-        } else if (psauce == true && pcheese == true && pbacon == true && pmush != true && proni != true && ppeppers != true) {
-            pizza.GetComponent<Renderer>().material = bacon;
-			pizzatype = "bacon";
-
-        } else if (psauce == true && pcheese == true && proni == true && ppeppers == true && pbacon != true && pmush != true) {
-            pizza.GetComponent<Renderer>().material = roniandpeppers;
-			pizzatype = "roniandpeppers";
-
-        } else if (psauce == true && pcheese == true && proni == true && pmush == true && ppeppers != true && ppeppers != true) {
-            pizza.GetComponent<Renderer>().material = roniandmush;
-			pizzatype = "roniandmush";
-
-        } else if (psauce == true && pcheese == true && proni == true && pbacon == true && pmush != true && ppeppers != true) {
-            pizza.GetComponent<Renderer>().material = roniandbacon;
-			pizzatype = "roniandbacon";
-
-        } else if (psauce == true && pcheese == true && pmush == true && ppeppers == true && pbacon != true && proni != true) {
-            pizza.GetComponent<Renderer>().material = peppersandmush;
-			pizzatype = "peppersandmush";
-
-        } else if (psauce == true && pcheese == true && pbacon == true && ppeppers == true && proni != true && pmush != true) {
-            pizza.GetComponent<Renderer>().material = peppersandbacon;
-			pizzatype = "peppersandbacon";
-
-        } else if (psauce == true && pcheese == true && pmush == true && pbacon == true && proni != true && ppeppers != true) {
-            pizza.GetComponent<Renderer>().material = baconandmush;
-			pizzatype = "baconandmush";
- 
-        } else if (psauce == true && pcheese == true && proni == true && pbacon == true && ppeppers == true && pmush != true) {
-            pizza.GetComponent<Renderer>().material = roniandbaconandpep;
-			pizzatype = "roniandbaconandpep";
-
-        } else if (psauce == true && pcheese == true && proni == true && pmush == true && pbacon == true && ppeppers != true) {
-            pizza.GetComponent<Renderer>().material = roniandbaconandmush;
-			pizzatype = "roniandbaconandmush";
-
-        } else if (psauce == true && pcheese == true && proni == true && pmush == true && ppeppers == true && pbacon != true) {
-            pizza.GetComponent<Renderer>().material = roniandPepandmush;
-			pizzatype = "roniandPepandmush";
-
-        } else if (psauce == true && pcheese == true && pmush == true && pbacon == true && ppeppers == true && proni != true) {
-            pizza.GetComponent<Renderer>().material = mushandbaconandpep;
-			pizzatype = "mushandbaconandpep";
-
-        } else if (psauce == true && pcheese == true && proni == true && pmush == true && pbacon == true && ppeppers == true) {
-            pizza.GetComponent<Renderer>().material = theworks;
-			pizzatype = "theworks";
-
-        }
+    void ToppingChange() {
+        int caseSwitch = 0;
+        if (isCooked != true && isBurned != true) caseSwitch = 1;
+        if (isCooked == true && isBurned != true) caseSwitch = 2;
+        if (isCooked == true && isBurned == true) caseSwitch = 3;
+        switch (caseSwitch) {
+               case 1:
+                    if (psauce == true && pcheese != true && proni != true && pmush != true && pbacon != true && ppeppers != true) {
+                        active = sauce;
+                        pizzatype = "sauce";
+                    } else if (psauce == true && pcheese == true && proni != true && pmush != true && pbacon != true && ppeppers != true) {
+                        active = cheese;
+                        pizzatype = "cheese";
+                    } else if (psauce == true && pcheese == true && proni == true && pmush != true && pbacon != true && ppeppers != true) {
+                        active = roni;
+                        pizzatype = "roni";
+                    } else if (psauce == true && pcheese == true && ppeppers == true && pmush != true && pbacon != true && proni != true) {
+                        active = peppers;
+                        pizzatype = "peppers";
+                    } else if (psauce == true && pcheese == true && pmush == true && proni != true && pbacon != true && ppeppers != true) {
+                        active = mushrooms;
+                        pizzatype = "mushrooms";
+                    } else if (psauce == true && pcheese == true && pbacon == true && pmush != true && proni != true && ppeppers != true) {
+                        active = bacon;
+                        pizzatype = "bacon";
+                    } else if (psauce == true && pcheese == true && proni == true && ppeppers == true && pbacon != true && pmush != true) {
+                        active = roniandpeppers;
+                        pizzatype = "roniandpeppers";
+                    } else if (psauce == true && pcheese == true && proni == true && pmush == true && ppeppers != true && ppeppers != true) {
+                        active = roniandmush;
+                        pizzatype = "roniandmush";
+                    } else if (psauce == true && pcheese == true && proni == true && pbacon == true && pmush != true && ppeppers != true) {
+                        active = roniandbacon;
+                        pizzatype = "roniandbacon";
+                    } else if (psauce == true && pcheese == true && pmush == true && ppeppers == true && pbacon != true && proni != true) {
+                        active = peppersandmush;
+                        pizzatype = "peppersandmush";
+                    } else if (psauce == true && pcheese == true && pbacon == true && ppeppers == true && proni != true && pmush != true) {
+                        active = peppersandbacon;
+                        pizzatype = "peppersandbacon";
+                    } else if (psauce == true && pcheese == true && pmush == true && pbacon == true && proni != true && ppeppers != true) {
+                        active = baconandmush;
+                        pizzatype = "baconandmush";
+                    } else if (psauce == true && pcheese == true && proni == true && pbacon == true && ppeppers == true && pmush != true) {
+                        active = roniandbaconandpep;
+                        pizzatype = "roniandbaconandpep";
+                    } else if (psauce == true && pcheese == true && proni == true && pmush == true && pbacon == true && ppeppers != true) {
+                        active = roniandbaconandmush;
+                        pizzatype = "roniandbaconandmush";
+                    } else if (psauce == true && pcheese == true && proni == true && pmush == true && ppeppers == true && pbacon != true) {
+                        active = roniandPepandmush;
+                        pizzatype = "roniandPepandmush";
+                    } else if (psauce == true && pcheese == true && pmush == true && pbacon == true && ppeppers == true && proni != true) {
+                        active = mushandbaconandpep;
+                        pizzatype = "mushandbaconandpep";
+                    } else if (psauce == true && pcheese == true && proni == true && pmush == true && pbacon == true && ppeppers == true) {
+                        active = theworks;
+                        pizzatype = "theworks";
+                    }
+                    break;
+                case 2:
+                    active = cooked;
+                    break;
+                case 3:
+                    active = burnt;
+                    break;
+            }        
     }
 
-	void OnCollisionEnter (Collision col)
-	{
-		print ("col");
-		GameObject other = col.gameObject;
-		switch (other.tag) {
-		case "sauce":
-			Destroy (other);
-			psauce = true;
+    void Cook() {
+        cookTime += Time.deltaTime;
+        if (cookTime >= doneTime && cookTime <= burntTime)
+            isCooked = true;
+        else if (cookTime >= burntTime)
+            isBurned = true;
+        ToppingChange();
+    }
+    void OnTriggerStay(Collider col) {
+        GameObject other = col.gameObject;
+        switch (other.tag) {            
+		case "oven":
+            Cook();
 			break;
-		case "cheese":
-			Destroy (other);
-			if (psauce == true) {
-				pcheese = true;
-			}   
-			break;
-		case "roni":
-			Destroy (other);
-			if (psauce == true && pcheese == true) {
-				proni = true;
-			} 
-			break;
-		case "peppers":
-			Destroy (other);
-			if (psauce == true && pcheese == true) {
-				ppeppers = true;
-			} 
-			break;
-		case "mushrooms":
-			Destroy (other);
-			if (psauce == true && pcheese == true) {
-				pmush = true;
-			}
-			break;
-		case "bacon":
-			Destroy (other);
-			if (psauce == true && pcheese == true) {
-				pbacon = true;
-			}
-			break;
-		}
-        toppingChange();
-	}
+        }
+    }
+    void OnCollisionEnter(Collision col) {
+        GameObject other = col.gameObject;
+        if (isCooked == false) {
+            switch (other.tag) {
+                case "sauce":
+                    Destroy(other);
+                    psauce = true;
+                    break;
+                case "cheese":
+                    Destroy(other);
+                    if (psauce == true) {
+                        pcheese = true;
+                    }
+                    break;
+                case "roni":
+                    Destroy(other);
+                    if (psauce == true && pcheese == true) {
+                        proni = true;
+                    }
+                    break;
+                case "peppers":
+                    Destroy(other);
+                    if (psauce == true && pcheese == true) {
+                        ppeppers = true;
+                    }
+                    break;
+                case "mushrooms":
+                    Destroy(other);
+                    if (psauce == true && pcheese == true) {
+                        pmush = true;
+                    }
+                    break;
+                case "bacon":
+                    Destroy(other);
+                    if (psauce == true && pcheese == true) {
+                        pbacon = true;
+                    }
+                    break;
+            }
+            ToppingChange();
+        }
+    }
+    public void Update(){
+        pizza.GetComponent<Renderer>().material = active;
+    }
+    
 }

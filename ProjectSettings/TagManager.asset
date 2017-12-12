@@ -25,6 +25,8 @@ TagManager:
   - pbutton
   - mbutton
   - bbutton
+  - cbutton
+  - oven
   layers:
   - Default
   - TransparentFX

@@ -21,6 +21,9 @@ GameObject:
   - component: {fileID: 4218764991459554}
   - component: {fileID: 33839213514141384}
   - component: {fileID: 23274361516309908}
+  - component: {fileID: 114938654228343084}
+  - component: {fileID: 114356829051050590}
+  - component: {fileID: 114177702376828068}
   m_Layer: 0
   m_Name: Button 1
   m_TagString: Untagged
@@ -39,10 +42,9 @@ GameObject:
   - component: {fileID: 33116633638852800}
   - component: {fileID: 23292929102201784}
   - component: {fileID: 95266044594825254}
-  - component: {fileID: 114521306590637478}
   m_Layer: 0
   m_Name: Push_button
-  m_TagString: tbutton
+  m_TagString: rbutton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1849512013690474}
   m_LocalRotation: {x: -0.50000006, y: 0.50000006, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: -1.017, y: 1.672, z: 0.043}
+  m_LocalPosition: {x: -0.9771, y: 1.6537, z: 0.0612}
   m_LocalScale: {x: 2.54, y: 2.54, z: 2.54}
   m_Children:
   - {fileID: 4218764991459554}
@@ -67,7 +69,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1294023720174220}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.00007632017, y: 0.000036753416, z: 0.018808018}
   m_LocalScale: {x: 0.87145275, y: 0.87145275, z: 1}
   m_Children: []
@@ -169,17 +171,74 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114521306590637478
+--- !u!114 &114177702376828068
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1849512013690474}
+  m_GameObject: {fileID: 1294023720174220}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cd2991d59c3856409903c99f480b362, type: 3}
+  m_Script: {fileID: 11500000, guid: fa86c0a9af54c494f902af1737d8e78f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  topping: {fileID: 0}
   spawner: {fileID: 0}
-  topping: {fileID: 1926933724379224, guid: 6ea14676ae462ab42b905aa3e424823f, type: 2}
-  buttonObject: {fileID: 1849512013690474}
+--- !u!114 &114356829051050590
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1294023720174220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3abaf4521bf2344ea21ed3020b98eb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disableWhenIdle: 1
+  touchHighlightColor: {r: 0.034482718, g: 1, b: 0, a: 0}
+  allowedTouchControllers: 0
+  ignoredColliders: []
+  isGrabbable: 0
+  holdButtonToGrab: 1
+  stayGrabbedOnTeleport: 1
+  validDrop: 1
+  grabOverrideButton: 0
+  allowedGrabControllers: 0
+  grabAttachMechanicScript: {fileID: 0}
+  secondaryGrabActionScript: {fileID: 0}
+  isUsable: 0
+  holdButtonToUse: 1
+  useOnlyIfGrabbed: 0
+  pointerActivatesUseAction: 0
+  useOverrideButton: 0
+  allowedUseControllers: 0
+  usingState: 0
+--- !u!114 &114938654228343084
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1294023720174220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd828872d92c3a94090d23b7b719f1e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultEvents:
+    OnValueChanged:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: VRTK.VRTK_Control+ValueChangedEvent, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  interactWithoutGrab: 1
+  connectedTo: {fileID: 0}
+  direction: 4
+  activationDistance: 0.02
+  buttonStrength: 5
+  events:
+    OnPush:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null

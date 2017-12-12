@@ -73,9 +73,9 @@
 
             newButtonGO.AddComponent<Image>();
             var canvasButton = newButtonGO.AddComponent<Button>();
-            var buttonColourBlock = canvasButton.colors;
-            buttonColourBlock.highlightedColor = Color.red;
-            canvasButton.colors = buttonColourBlock;
+            //var buttonColourBlock = canvasButton.colors;
+            //buttonColourBlock.highlightedColor = Color.red;
+            //canvasButton.colors = buttonColourBlock;
 
             var newTextGO = new GameObject("BtnText", typeof(RectTransform));
             newTextGO.transform.SetParent(newButtonGO.transform);
