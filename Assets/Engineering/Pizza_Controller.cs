@@ -32,10 +32,28 @@ public class Pizza_Controller : MonoBehaviour
 	public Material mushandbaconandpep;
 	public Material theworks;
 	public Material dough;
-	public Material burnt;
+    public Material cookedDough;
+    public Material burnt;
 	public Material cooked;
+    public Material cookedSauce;
+    public Material cookedCheese;
+    public Material cookedRoni;
+    public Material cookedPeppers;
+    public Material cookedMushrooms;
+    public Material cookedBacon;
+    public Material cookedroniandbacon;
+    public Material cookedroniandpeppers;
+    public Material cookedroniandmush;
+    public Material cookedpeppersandmush;
+    public Material cookedpeppersandbacon;
+    public Material cookedbaconandmush;
+    public Material cookedroniandbaconandpep;
+    public Material cookedroniandbaconandmush;
+    public Material cookedroniandPepandmush;
+    public Material cookedmushandbaconandpep;
+    public Material cookedtheworks;
 
-	public GameObject pizza;
+    public GameObject pizza;
 
 	public bool psauce = false;
 	public bool pcheese = false;
@@ -112,8 +130,62 @@ public class Pizza_Controller : MonoBehaviour
                     }
                     break;
                 case 2:
-                    active = cooked;
-                    break;
+                if (psauce != true && pcheese != true && proni != true && pmush != true && pbacon != true && ppeppers != true) {
+                    active = cookedDough;
+                }
+                else if (psauce == true && pcheese != true && proni != true && pmush != true && pbacon != true && ppeppers != true) {
+                    active = cookedSauce;
+                    pizzatype = "sauce";
+                } else if (psauce == true && pcheese == true && proni != true && pmush != true && pbacon != true && ppeppers != true) {
+                    active = cookedCheese;
+                    pizzatype = "cheese";
+                } else if (psauce == true && pcheese == true && proni == true && pmush != true && pbacon != true && ppeppers != true) {
+                    active = cookedRoni;
+                    pizzatype = "roni";
+                } else if (psauce == true && pcheese == true && ppeppers == true && pmush != true && pbacon != true && proni != true) {
+                    active = cookedPeppers;
+                    pizzatype = "peppers";
+                } else if (psauce == true && pcheese == true && pmush == true && proni != true && pbacon != true && ppeppers != true) {
+                    active = cookedMushrooms;
+                    pizzatype = "mushrooms";
+                } else if (psauce == true && pcheese == true && pbacon == true && pmush != true && proni != true && ppeppers != true) {
+                    active = cookedBacon;
+                    pizzatype = "bacon";
+                } else if (psauce == true && pcheese == true && proni == true && ppeppers == true && pbacon != true && pmush != true) {
+                    active = cookedroniandpeppers;
+                    pizzatype = "roniandpeppers";
+                } else if (psauce == true && pcheese == true && proni == true && pmush == true && ppeppers != true && ppeppers != true) {
+                    active = cookedroniandmush;
+                    pizzatype = "roniandmush";
+                } else if (psauce == true && pcheese == true && proni == true && pbacon == true && pmush != true && ppeppers != true) {
+                    active = cookedroniandbacon;
+                    pizzatype = "roniandbacon";
+                } else if (psauce == true && pcheese == true && pmush == true && ppeppers == true && pbacon != true && proni != true) {
+                    active = cookedpeppersandmush;
+                    pizzatype = "peppersandmush";
+                } else if (psauce == true && pcheese == true && pbacon == true && ppeppers == true && proni != true && pmush != true) {
+                    active = cookedpeppersandbacon;
+                    pizzatype = "peppersandbacon";
+                } else if (psauce == true && pcheese == true && pmush == true && pbacon == true && proni != true && ppeppers != true) {
+                    active = cookedbaconandmush;
+                    pizzatype = "baconandmush";
+                } else if (psauce == true && pcheese == true && proni == true && pbacon == true && ppeppers == true && pmush != true) {
+                    active = cookedroniandbaconandpep;
+                    pizzatype = "roniandbaconandpep";
+                } else if (psauce == true && pcheese == true && proni == true && pmush == true && pbacon == true && ppeppers != true) {
+                    active = cookedroniandbaconandmush;
+                    pizzatype = "roniandbaconandmush";
+                } else if (psauce == true && pcheese == true && proni == true && pmush == true && ppeppers == true && pbacon != true) {
+                    active = cookedroniandPepandmush;
+                    pizzatype = "roniandPepandmush";
+                } else if (psauce == true && pcheese == true && pmush == true && pbacon == true && ppeppers == true && proni != true) {
+                    active = cookedmushandbaconandpep;
+                    pizzatype = "mushandbaconandpep";
+                } else if (psauce == true && pcheese == true && proni == true && pmush == true && pbacon == true && ppeppers == true) {
+                    active = cookedtheworks;
+                    pizzatype = "theworks";
+                }
+                break;
                 case 3:
                     active = burnt;
                     break;
