@@ -6,6 +6,27 @@ TagManager:
   tags:
   - FxTemporaire
   - projectile
+  - roni
+  - cheese
+  - sauce
+  - peppers
+  - mushrooms
+  - bacon
+  - dough
+  - ts
+  - ds
+  - button
+  - tbutton
+  - dbutton
+  - Ticket
+  - TeleportIgnore
+  - sbutton
+  - rbutton
+  - pbutton
+  - mbutton
+  - bbutton
+  - cbutton
+  - oven
   layers:
   - Default
   - TransparentFX
