@@ -25,10 +25,6 @@ public class Ticket_Spawn : MonoBehaviour
 	public Material mushandbaconandpep;
 	public Material theworks;
 
-	public Material dough;
-	public Material burnt;
-	public Material cooked;
-
 	public int randticket;
 	public int ticketnum = 5;
 	public int currentticket = 0;
@@ -38,9 +34,14 @@ public class Ticket_Spawn : MonoBehaviour
 	public int strikes = 0;
 	public int points = 0;
 
+
 	void SpawnTicket ()
 	{
 		tickets [currentticket].SetActive (true);
+			randticket = Random.Range (1, 6);
+		} else {
+			randticket = Random.Range (1, 17);
+		}
 		switch (randticket) {
 		case 1:
 			tickets [currentticket].GetComponent<Renderer> ().material = sauce;
@@ -130,25 +131,41 @@ public class Ticket_Spawn : MonoBehaviour
 
 		}
 		currentticket = currentticket + 1;
+
 	}
 
 
 	void Start ()
 	{
-		randticket = Random.Range (1, 5);
-		spawndelay = Random.Range (10, 50);
-		SpawnTicket ();
+		StartCoroutine (TicketSpawn ());
 	}
 
+	IEnumerator TicketSpawn()
+	{
+		SpawnTicket ();
+		yield return new WaitForSeconds(spawndelay);
+		SpawnTicket ();
+		yield return new WaitForSeconds(spawndelay);
+		SpawnTicket ();
+		yield return new WaitForSeconds(spawndelay);
+		SpawnTicket ();
+		yield return new WaitForSeconds(spawndelay);
+		SpawnTicket ();
+		yield return new WaitForSeconds(spawndelay);
+		SpawnTicket ();
+
+	}
 
 	void FixedUpdate ()
 	{
+
+
 		if (strikes == 3) {
-				#if UNITY_EDITOR
-				UnityEditor.EditorApplication.isPlaying = false;
-				#else
-				Application.Quit ();
-				#endif
+			#if UNITY_EDITOR
+			UnityEditor.EditorApplication.isPlaying = false;
+			#else
+			Application.Quit ();
+			#endif
 		}
 	}
 
@@ -158,6 +175,8 @@ public class Ticket_Spawn : MonoBehaviour
 		for (int i = 0; i < order.Length; i++) {
 			if (order [i] == col.gameObject.GetComponent<Pizza_Controller> ().pizzatype) {
 				iscorrect = true;
+				tickets [i].SetActive (false);
+				order [i] = "done";
 				break;
 			}
 			else {

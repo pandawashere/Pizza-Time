@@ -1232,20 +1232,6 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_FalloffTable:
-    m_Table[0]: 0
-    m_Table[1]: 0
-    m_Table[2]: 0
-    m_Table[3]: 0
-    m_Table[4]: 0
-    m_Table[5]: 0
-    m_Table[6]: 0
-    m_Table[7]: 0
-    m_Table[8]: 0
-    m_Table[9]: 0
-    m_Table[10]: 0
-    m_Table[11]: 0
-    m_Table[12]: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
@@ -1324,7 +1310,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: fe25ea71e3eab2d47826f4af1435e557, type: 2}
     - target: {fileID: 100000, guid: 9dfc2ddf494b25f47b50d2a5150b296c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 9dfc2ddf494b25f47b50d2a5150b296c, type: 3}
       propertyPath: m_TagString
@@ -1390,7 +1376,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: fe25ea71e3eab2d47826f4af1435e557, type: 2}
     - target: {fileID: 100000, guid: 9dfc2ddf494b25f47b50d2a5150b296c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 9dfc2ddf494b25f47b50d2a5150b296c, type: 3}
       propertyPath: m_TagString
@@ -1499,20 +1485,6 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_FalloffTable:
-    m_Table[0]: 0
-    m_Table[1]: 0
-    m_Table[2]: 0
-    m_Table[3]: 0
-    m_Table[4]: 0
-    m_Table[5]: 0
-    m_Table[6]: 0
-    m_Table[7]: 0
-    m_Table[8]: 0
-    m_Table[9]: 0
-    m_Table[10]: 0
-    m_Table[11]: 0
-    m_Table[12]: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
@@ -2018,15 +1990,13 @@ MonoBehaviour:
   roniandPepandmush: {fileID: 2100000, guid: 54a0c8c3e2566524ebe08468e819df44, type: 2}
   mushandbaconandpep: {fileID: 2100000, guid: 29bba7692854b4d4ca98927d17926114, type: 2}
   theworks: {fileID: 2100000, guid: 483110a781f98ce488273b51c976bcdf, type: 2}
-  dough: {fileID: 0}
-  burnt: {fileID: 0}
-  cooked: {fileID: 0}
   randticket: 0
   ticketnum: 5
   currentticket: 0
   spawndelay: 0
   strikes: 0
   points: 0
+  ezmode: yes
 --- !u!1001 &769653759
 Prefab:
   m_ObjectHideFlags: 0
@@ -2470,7 +2440,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: fe25ea71e3eab2d47826f4af1435e557, type: 2}
     - target: {fileID: 100000, guid: 9dfc2ddf494b25f47b50d2a5150b296c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 9dfc2ddf494b25f47b50d2a5150b296c, type: 3}
       propertyPath: m_TagString
@@ -3078,7 +3048,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: fe25ea71e3eab2d47826f4af1435e557, type: 2}
     - target: {fileID: 100000, guid: 9dfc2ddf494b25f47b50d2a5150b296c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 9dfc2ddf494b25f47b50d2a5150b296c, type: 3}
       propertyPath: m_TagString
@@ -5355,7 +5325,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: fe25ea71e3eab2d47826f4af1435e557, type: 2}
     - target: {fileID: 100000, guid: 9dfc2ddf494b25f47b50d2a5150b296c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 9dfc2ddf494b25f47b50d2a5150b296c, type: 3}
       propertyPath: m_TagString
@@ -6124,7 +6094,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: fe25ea71e3eab2d47826f4af1435e557, type: 2}
     - target: {fileID: 100000, guid: 9dfc2ddf494b25f47b50d2a5150b296c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 9dfc2ddf494b25f47b50d2a5150b296c, type: 3}
       propertyPath: m_TagString
