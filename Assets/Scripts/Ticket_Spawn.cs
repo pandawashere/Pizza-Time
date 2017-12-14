@@ -34,10 +34,12 @@ public class Ticket_Spawn : MonoBehaviour
 	public int strikes = 0;
 	public int points = 0;
 
+	public string ezmode = "";
 
 	void SpawnTicket ()
 	{
 		tickets [currentticket].SetActive (true);
+		if (ezmode == "yes") {
 			randticket = Random.Range (1, 6);
 		} else {
 			randticket = Random.Range (1, 17);
@@ -131,6 +133,7 @@ public class Ticket_Spawn : MonoBehaviour
 
 		}
 		currentticket = currentticket + 1;
+		spawndelay = Random.Range (10, 25);
 
 	}
 
