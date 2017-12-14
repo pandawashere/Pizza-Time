@@ -213,35 +213,35 @@ public class Pizza_Controller : MonoBehaviour
         if (isCooked == false) {
             switch (other.tag) {
                 case "sauce":
-                    Destroy(other);
+                    if (psauce != true) Destroy(other);
                     psauce = true;
                     break;
                 case "cheese":
-                    Destroy(other);
+                    if (pcheese != true) Destroy(other);
                     if (psauce == true) {
                         pcheese = true;
                     }
                     break;
                 case "roni":
-                    Destroy(other);
+                    if (proni != true) Destroy(other);
                     if (psauce == true && pcheese == true) {
                         proni = true;
                     }
                     break;
                 case "peppers":
-                    Destroy(other);
+                    if (ppeppers != true) Destroy(other);
                     if (psauce == true && pcheese == true) {
                         ppeppers = true;
                     }
                     break;
                 case "mushrooms":
-                    Destroy(other);
+                    if (pmush != true) Destroy(other);
                     if (psauce == true && pcheese == true) {
                         pmush = true;
                     }
                     break;
                 case "bacon":
-                    Destroy(other);
+                    if (pbacon != true) Destroy(other);
                     if (psauce == true && pcheese == true) {
                         pbacon = true;
                     }
