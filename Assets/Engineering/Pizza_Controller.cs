@@ -55,7 +55,23 @@ public class Pizza_Controller : MonoBehaviour
 
     public GameObject pizza;
 
-	public bool psauce = false;
+    AutoSpawn sauceAuto;
+    AutoSpawn cheeseAuto;
+    AutoSpawn roniAuto;
+    AutoSpawn pepperAuto;
+    AutoSpawn baconAuto;
+    AutoSpawn mushAuto;
+    AutoSpawn doughAuto;
+
+    public GameObject sAuto;
+    public GameObject cAuto;
+    public GameObject rAuto;
+    public GameObject pAuto;
+    public GameObject bAuto;
+    public GameObject mAuto;
+    public GameObject dAuto;
+
+    public bool psauce = false;
 	public bool pcheese = false;
 	public bool proni = false;
 	public bool ppeppers = false;
@@ -67,7 +83,21 @@ public class Pizza_Controller : MonoBehaviour
 	void Start () {
         S = this;
         active = dough;
-	}
+        sAuto = GameObject.FindGameObjectWithTag("sbutton");
+        sauceAuto = sAuto.GetComponent<AutoSpawn>();
+        cAuto = GameObject.FindGameObjectWithTag("cbutton");
+        cheeseAuto = cAuto.GetComponent<AutoSpawn>();
+        rAuto = GameObject.FindGameObjectWithTag("rbutton");
+        roniAuto = rAuto.GetComponent<AutoSpawn>();
+        pAuto = GameObject.FindGameObjectWithTag("pbutton");
+        pepperAuto = pAuto.GetComponent<AutoSpawn>();
+        bAuto = GameObject.FindGameObjectWithTag("bbutton");
+        baconAuto = bAuto.GetComponent<AutoSpawn>();
+        mAuto = GameObject.FindGameObjectWithTag("mbutton");
+        mushAuto = mAuto.GetComponent<AutoSpawn>();
+        dAuto = GameObject.FindGameObjectWithTag("dbutton");
+        doughAuto = dAuto.GetComponent<AutoSpawn>();
+    }
 
     void ToppingChange() {
         int caseSwitch = 0;
@@ -213,37 +243,45 @@ public class Pizza_Controller : MonoBehaviour
         if (isCooked == false) {
             switch (other.tag) {
                 case "sauce":
-                    if (psauce != true) Destroy(other);
+                    if (psauce != true) {
+                        Destroy(other);
+                        sauceAuto.objs--;
+                    }
                     psauce = true;
                     break;
                 case "cheese":
                     if (pcheese != true) Destroy(other);
                     if (psauce == true) {
                         pcheese = true;
+                        cheeseAuto.objs--;
                     }
                     break;
                 case "roni":
                     if (proni != true) Destroy(other);
                     if (psauce == true && pcheese == true) {
                         proni = true;
+                        roniAuto.objs--;
                     }
                     break;
                 case "peppers":
                     if (ppeppers != true) Destroy(other);
                     if (psauce == true && pcheese == true) {
                         ppeppers = true;
+                        pepperAuto.objs--;
                     }
                     break;
                 case "mushrooms":
                     if (pmush != true) Destroy(other);
                     if (psauce == true && pcheese == true) {
                         pmush = true;
+                        mushAuto.objs--;
                     }
                     break;
                 case "bacon":
                     if (pbacon != true) Destroy(other);
                     if (psauce == true && pcheese == true) {
                         pbacon = true;
+                        baconAuto.objs--;
                     }
                     break;
             }

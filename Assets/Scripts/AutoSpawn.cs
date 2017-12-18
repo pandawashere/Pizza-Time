@@ -10,21 +10,18 @@ public class AutoSpawn : MonoBehaviour {
 	public string tagname;
 	public int spawnlimit;
 	public static int spawnnum;
-
+    public int objs = 0;
 
 
 
 	void Start () {
-		Instantiate (ingredient, spawnarea.transform.position, spawnarea.transform.rotation);
-	}
-	
-	void OnTriggerExit(Collider collision){
-			if (collision.gameObject.tag == tagname) {
-				Instantiate (ingredient, spawnarea.transform.position, spawnarea.transform.rotation);
-		}
-	}
+        for (int i =0; i < spawnlimit; i++) {
+            Instantiate(ingredient, spawnarea.transform.position, spawnarea.transform.rotation);
+            objs++;
+        }
+    }
 
-	void Update () {
-		
-	}
+	void spawn () {
+        if (objs < spawnlimit) Instantiate(ingredient, spawnarea.transform.position, spawnarea.transform.rotation);
+    }
 }
