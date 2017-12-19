@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class Ticket_Spawn : MonoBehaviour
@@ -33,6 +34,10 @@ public class Ticket_Spawn : MonoBehaviour
 	private bool iscorrect = false;
 	public int strikes = 0;
 	public int points = 0;
+
+	public Text scoreText;
+	public Text strikeText;
+	public Text winText;
 
 	public string ezmode = "";
 
@@ -140,6 +145,7 @@ public class Ticket_Spawn : MonoBehaviour
 
 	void Start ()
 	{
+		SetScoreText ();
 		StartCoroutine (TicketSpawn ());
 	}
 
@@ -163,14 +169,28 @@ public class Ticket_Spawn : MonoBehaviour
 	{
 
 
-		if (strikes == 3) {
-			#if UNITY_EDITOR
-			UnityEditor.EditorApplication.isPlaying = false;
-			#else
-			Application.Quit ();
-			#endif
-		}
+//		if (strikes == 3) {
+//			#if UNITY_EDITOR
+//			UnityEditor.EditorApplication.isPlaying = false;
+//			#else
+//			Application.Quit ();
+//			#endif
+//		}
 	}
+
+	void SetScoreText()
+	{
+		scoreText.text = "Correct Pizzas: " + points + "/6";
+		strikeText.text = "Strikes: " + strikes + "/3";
+		if (points == 6) {
+			winText.text= "YOU WIN!";
+		}
+		if (strikes == 3) {
+			winText.text = "YOU LOSE!";
+		}
+
+	}
+
 
 
 	void OnCollisionEnter (Collision col)
@@ -189,9 +209,11 @@ public class Ticket_Spawn : MonoBehaviour
 		}
 		if (iscorrect == false) {
 			strikes = strikes + 1;
+			SetScoreText ();
 			Destroy (col.gameObject);
 		} else if (iscorrect == true){
 			points = points + 1;
+			SetScoreText ();
 			Destroy (col.gameObject);
 		}
 	}
