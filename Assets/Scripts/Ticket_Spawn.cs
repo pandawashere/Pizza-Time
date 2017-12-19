@@ -1,12 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class Ticket_Spawn : MonoBehaviour
 {
 
 	public GameObject[] tickets;
-    public GameObject[] ticketSpawns;
 	public string[] order;
 	public Material cheese;
 	public Material roni;
@@ -30,12 +30,16 @@ public class Ticket_Spawn : MonoBehaviour
 	public int currentticket = 0;
 	public int spawndelay;
 
-    public AudioClip pizzaTime;
+    //public AudioSource pizzaTime;
     public Transform audioPlay;
 
 	private bool iscorrect = false;
 	public int strikes = 0;
 	public int points = 0;
+
+	public Text scoreText;
+	public Text strikeText;
+	public Text winText;
 
 	public string ezmode = "";
 
@@ -138,6 +142,7 @@ public class Ticket_Spawn : MonoBehaviour
 
 	void Start ()
 	{
+		SetScoreText ();
 		StartCoroutine (TicketSpawn ());
 	}
 
@@ -157,18 +162,20 @@ public class Ticket_Spawn : MonoBehaviour
 
 	}
 
-	void FixedUpdate ()
+    void FixedUpdate() { }
+	void SetScoreText()
 	{
-
-
-		if (strikes == 3) {
-			#if UNITY_EDITOR
-			UnityEditor.EditorApplication.isPlaying = false;
-			#else
-			Application.Quit ();
-			#endif
+		scoreText.text = "Correct Pizzas: " + points + "/6";
+		strikeText.text = "Strikes: " + strikes + "/3";
+		if (points == 6) {
+			winText.text= "YOU WIN!";
 		}
+		if (strikes == 3) {
+			winText.text = "YOU LOSE!";
+		}
+
 	}
+
 
 
 	void OnCollisionEnter (Collision col)
@@ -185,12 +192,13 @@ public class Ticket_Spawn : MonoBehaviour
 				iscorrect = false;
 			}
 		}
-		if (iscorrect == false && col.gameObject.tag == "dough") {
-			strikes = strikes + 1;
-			Destroy (col.gameObject);
-		} else if (iscorrect == true && col.gameObject.tag == "dough") {
-            AudioSource.PlayClipAtPoint(pizzaTime, audioPlay.position, 10);
+		if (iscorrect == true && col.gameObject.tag == "dough") {
             points = points + 1;
+            SetScoreText ();
+			Destroy (col.gameObject);
+		}  else if (iscorrect == false && col.gameObject.tag == "dough") {
+            strikes = strikes + 1;
+            SetScoreText ();
 			Destroy (col.gameObject);
 		}
 	}

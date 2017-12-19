@@ -29,6 +29,7 @@ GameObject:
   - component: {fileID: 114352725771235570}
   - component: {fileID: 114954615501660130}
   - component: {fileID: 114167270345412776}
+  - component: {fileID: 114634095060262042}
   m_Layer: 0
   m_Name: Ticket2.0
   m_TagString: Untagged
@@ -174,6 +175,23 @@ MonoBehaviour:
   throwVelocityWithAttachDistance: 0
   throwMultiplier: 1
   onGrabCollisionDelay: 0
+--- !u!114 &114634095060262042
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1491453565966358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 817f15b2a0426974bb4e88ef34aa22b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hideControllerOnTouch: 0
+  hideDelayOnTouch: 0
+  hideControllerOnGrab: 1
+  hideDelayOnGrab: 0
+  hideControllerOnUse: 0
+  hideDelayOnUse: 0
 --- !u!114 &114910275426654272
 MonoBehaviour:
   m_ObjectHideFlags: 1

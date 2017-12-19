@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class NewTopping_Spawner : MonoBehaviour {
 
@@ -50,9 +51,12 @@ public class NewTopping_Spawner : MonoBehaviour {
             for (int i = 0; i < 2; i++) Instantiate(sauce, sspawn.transform.position, sspawn.transform.rotation);
             for (int i = 0; i < 2; i++) Instantiate(cheese, cspawn.transform.position, cspawn.transform.rotation);
             for (int i = 0; i < 4; i++) Instantiate(bacon, bspawn.transform.position, bspawn.transform.rotation);
-            for (int i = 0; i < 40; i++) Instantiate(roni, rspawn.transform.position, rspawn.transform.rotation);
-            for (int i = 0; i < 80; i++) Instantiate(pepper, pspawn.transform.position, pspawn.transform.rotation);
+            for (int i = 0; i < 4; i++) Instantiate(roni, rspawn.transform.position, rspawn.transform.rotation);
+            for (int i = 0; i < 4; i++) Instantiate(pepper, pspawn.transform.position, pspawn.transform.rotation);
             for (int i = 0; i < 2; i++) Instantiate(mush, mspawn.transform.position, mspawn.transform.rotation);
+        }
+        if (coll.tag == "button") {
+            SceneManager.LoadScene("Level_GreyBox");
         }
     }
 }
