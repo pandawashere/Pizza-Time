@@ -54,23 +54,6 @@ public class Pizza_Controller : MonoBehaviour
     public Material cookedtheworks;
 
     public GameObject pizza;
-    /*
-    AutoSpawn sauceAuto;
-    AutoSpawn cheeseAuto;
-    AutoSpawn roniAuto;
-    AutoSpawn pepperAuto;
-    AutoSpawn baconAuto;
-    AutoSpawn mushAuto;
-    AutoSpawn doughAuto;
-
-    public GameObject sAuto;
-    public GameObject cAuto;
-    public GameObject rAuto;
-    public GameObject pAuto;
-    public GameObject bAuto;
-    public GameObject mAuto;
-    public GameObject dAuto;
-    */
     public bool psauce = false;
 	public bool pcheese = false;
 	public bool proni = false;
@@ -83,22 +66,6 @@ public class Pizza_Controller : MonoBehaviour
 	void Start () {
         S = this;
         active = dough;
-        /*
-        sAuto = GameObject.FindGameObjectWithTag("sbutton");
-        sauceAuto = sAuto.GetComponent<AutoSpawn>();
-        cAuto = GameObject.FindGameObjectWithTag("cbutton");
-        cheeseAuto = cAuto.GetComponent<AutoSpawn>();
-        rAuto = GameObject.FindGameObjectWithTag("rbutton");
-        roniAuto = rAuto.GetComponent<AutoSpawn>();
-        pAuto = GameObject.FindGameObjectWithTag("pbutton");
-        pepperAuto = pAuto.GetComponent<AutoSpawn>();
-        bAuto = GameObject.FindGameObjectWithTag("bbutton");
-        baconAuto = bAuto.GetComponent<AutoSpawn>();
-        mAuto = GameObject.FindGameObjectWithTag("mbutton");
-        mushAuto = mAuto.GetComponent<AutoSpawn>();
-        dAuto = GameObject.FindGameObjectWithTag("dbutton");
-        doughAuto = dAuto.GetComponent<AutoSpawn>();
-        */
     }
 
     void ToppingChange() {
@@ -110,55 +77,55 @@ public class Pizza_Controller : MonoBehaviour
                case 1:
                     if (psauce == true && pcheese != true && proni != true && pmush != true && pbacon != true && ppeppers != true) {
                         active = sauce;
-                        pizzatype = "sauce";
+                        //pizzatype = "sauce";
                     } else if (psauce == true && pcheese == true && proni != true && pmush != true && pbacon != true && ppeppers != true) {
                         active = cheese;
-                        pizzatype = "cheese";
+                        //pizzatype = "cheese";
                     } else if (psauce == true && pcheese == true && proni == true && pmush != true && pbacon != true && ppeppers != true) {
                         active = roni;
-                        pizzatype = "roni";
+                        //pizzatype = "roni";
                     } else if (psauce == true && pcheese == true && ppeppers == true && pmush != true && pbacon != true && proni != true) {
                         active = peppers;
-                        pizzatype = "peppers";
+                        //pizzatype = "peppers";
                     } else if (psauce == true && pcheese == true && pmush == true && proni != true && pbacon != true && ppeppers != true) {
                         active = mushrooms;
-                        pizzatype = "mushrooms";
+                        //pizzatype = "mushrooms";
                     } else if (psauce == true && pcheese == true && pbacon == true && pmush != true && proni != true && ppeppers != true) {
                         active = bacon;
-                        pizzatype = "bacon";
+                        //pizzatype = "bacon";
                     } else if (psauce == true && pcheese == true && proni == true && ppeppers == true && pbacon != true && pmush != true) {
                         active = roniandpeppers;
-                        pizzatype = "roniandpeppers";
+                        //pizzatype = "roniandpeppers";
                     } else if (psauce == true && pcheese == true && proni == true && pmush == true && ppeppers != true && ppeppers != true) {
                         active = roniandmush;
-                        pizzatype = "roniandmush";
+                        //pizzatype = "roniandmush";
                     } else if (psauce == true && pcheese == true && proni == true && pbacon == true && pmush != true && ppeppers != true) {
                         active = roniandbacon;
-                        pizzatype = "roniandbacon";
+                        //pizzatype = "roniandbacon";
                     } else if (psauce == true && pcheese == true && pmush == true && ppeppers == true && pbacon != true && proni != true) {
                         active = peppersandmush;
-                        pizzatype = "peppersandmush";
+                        //pizzatype = "peppersandmush";
                     } else if (psauce == true && pcheese == true && pbacon == true && ppeppers == true && proni != true && pmush != true) {
                         active = peppersandbacon;
-                        pizzatype = "peppersandbacon";
+                        //pizzatype = "peppersandbacon";
                     } else if (psauce == true && pcheese == true && pmush == true && pbacon == true && proni != true && ppeppers != true) {
                         active = baconandmush;
-                        pizzatype = "baconandmush";
+                        //pizzatype = "baconandmush";
                     } else if (psauce == true && pcheese == true && proni == true && pbacon == true && ppeppers == true && pmush != true) {
                         active = roniandbaconandpep;
-                        pizzatype = "roniandbaconandpep";
+                        //pizzatype = "roniandbaconandpep";
                     } else if (psauce == true && pcheese == true && proni == true && pmush == true && pbacon == true && ppeppers != true) {
                         active = roniandbaconandmush;
-                        pizzatype = "roniandbaconandmush";
+                        //pizzatype = "roniandbaconandmush";
                     } else if (psauce == true && pcheese == true && proni == true && pmush == true && ppeppers == true && pbacon != true) {
                         active = roniandPepandmush;
-                        pizzatype = "roniandPepandmush";
+                        //pizzatype = "roniandPepandmush";
                     } else if (psauce == true && pcheese == true && pmush == true && pbacon == true && ppeppers == true && proni != true) {
                         active = mushandbaconandpep;
-                        pizzatype = "mushandbaconandpep";
+                        //pizzatype = "mushandbaconandpep";
                     } else if (psauce == true && pcheese == true && proni == true && pmush == true && pbacon == true && ppeppers == true) {
                         active = theworks;
-                        pizzatype = "theworks";
+                        //pizzatype = "theworks";
                     }
                     break;
                 case 2:
@@ -252,35 +219,35 @@ public class Pizza_Controller : MonoBehaviour
                     psauce = true;
                     break;
                 case "cheese":
-                    if (pcheese != true) Destroy(other);
+                    if (pcheese != true && psauce == true) Destroy(other);
                     if (psauce == true) {
                         pcheese = true;
                         //cheeseAuto.objs--;
                     }
                     break;
                 case "roni":
-                    if (proni != true) Destroy(other);
+                    if (psauce == true && pcheese == true && proni != true) Destroy(other);
                     if (psauce == true && pcheese == true) {
                         proni = true;
                         //roniAuto.objs--;
                     }
                     break;
                 case "peppers":
-                    if (ppeppers != true) Destroy(other);
+                    if (psauce == true && pcheese == true && ppeppers != true) Destroy(other);
                     if (psauce == true && pcheese == true) {
                         ppeppers = true;
                         //pepperAuto.objs--;
                     }
                     break;
                 case "mushrooms":
-                    if (pmush != true) Destroy(other);
+                    if (psauce == true && pcheese == true && pmush != true) Destroy(other);
                     if (psauce == true && pcheese == true) {
                         pmush = true;
                         //mushAuto.objs--;
                     }
                     break;
                 case "bacon":
-                    if (pbacon != true) Destroy(other);
+                    if (psauce == true && pcheese == true && pbacon != true) Destroy(other);
                     if (psauce == true && pcheese == true) {
                         pbacon = true;
                         //baconAuto.objs--;

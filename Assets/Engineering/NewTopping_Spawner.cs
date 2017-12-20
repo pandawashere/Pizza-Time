@@ -20,6 +20,8 @@ public class NewTopping_Spawner : MonoBehaviour {
     public GameObject pepper;
     public GameObject mush;
 
+    public bool reset = false;
+
     public Transform position;
     Transform oldposition;
 
@@ -56,6 +58,10 @@ public class NewTopping_Spawner : MonoBehaviour {
             for (int i = 0; i < 2; i++) Instantiate(mush, mspawn.transform.position, mspawn.transform.rotation);
         }
         if (coll.tag == "button") {
+            SceneManager.LoadScene("Level_GreyBox");
+        }
+        if (coll.tag == "reset")
+        {
             SceneManager.LoadScene("Level_GreyBox");
         }
     }

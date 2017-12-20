@@ -6,7 +6,10 @@ using UnityEngine;
 public class Ticket_Spawn : MonoBehaviour
 {
 
+    public NewTopping_Spawner toppingSpawner;
+
 	public GameObject[] tickets;
+    public GameObject reset;
 	public string[] order;
 	public Material cheese;
 	public Material roni;
@@ -24,6 +27,19 @@ public class Ticket_Spawn : MonoBehaviour
 	public Material roniandPepandmush;
 	public Material mushandbaconandpep;
 	public Material theworks;
+
+    public float fullPoints = 1;
+    public float multiplier = 3;
+    int ticketNumber;
+    float totalScore = 0;
+    /*
+    float timeOne = 0;
+    float timeTwo = 0;
+    float timeThree = 0;
+    float timeFour = 0;
+    float timeFive= 0;
+    float timeSix = 0;
+    */
 
 	public int randticket;
 	public int ticketnum = 5;
@@ -135,15 +151,15 @@ public class Ticket_Spawn : MonoBehaviour
 
 		}
 		currentticket = currentticket + 1;
-		spawndelay = Random.Range (10, 25);
+		spawndelay = Random.Range (10, 20);
 
 	}
-
+    
 
 	void Start ()
 	{
-		SetScoreText ();
-		StartCoroutine (TicketSpawn ());
+        scoreText.text = "Score: " + totalScore;
+        StartCoroutine (TicketSpawn ());
 	}
 
 	IEnumerator TicketSpawn()
@@ -159,19 +175,49 @@ public class Ticket_Spawn : MonoBehaviour
 		SpawnTicket ();
 		yield return new WaitForSeconds(spawndelay);
 		SpawnTicket ();
-
 	}
-
-    void FixedUpdate() { }
-	void SetScoreText()
+    
+	void SetScoreText(int num)
 	{
-		scoreText.text = "Correct Pizzas: " + points + "/6";
-		strikeText.text = "Strikes: " + strikes + "/3";
-		if (points == 6) {
-			winText.text= "YOU WIN!";
-		}
-		if (strikes == 3) {
-			winText.text = "YOU LOSE!";
+        switch (num) {
+            case 0:
+                strikeText.text = "Strikes: " + strikes + "/3";
+                multiplier--;
+                break;
+            case 1:
+                totalScore = totalScore + (fullPoints * multiplier);
+                scoreText.text = "Score: " + totalScore;
+                break;
+            case 2:
+                totalScore = totalScore + (fullPoints * multiplier);
+                scoreText.text = "Score: " + totalScore;
+                break;
+            case 3:
+                totalScore = totalScore + (fullPoints * multiplier);
+                scoreText.text = "Score: " + totalScore;
+                break;
+            case 4:
+                totalScore = totalScore + (fullPoints * multiplier);
+                scoreText.text = "Score: " + totalScore;
+                break;
+            case 5:
+                totalScore = totalScore + (fullPoints * multiplier);
+                scoreText.text = "Score: " + totalScore;
+                break;
+            case 6:
+                totalScore = totalScore + (fullPoints * multiplier);
+                scoreText.text = "Score: " + totalScore;
+                break;
+        }
+
+        if (totalScore == 0) winText.text = "Noob";
+        else if (totalScore < 600) winText.text = "Novice";
+        else if (totalScore < 1200) winText.text = "Expert";
+        else if (totalScore < 1500) winText.text = "Master";
+        else if (totalScore == 1500) winText.text = "Pizza God";
+        else if (strikes == 3) {
+			winText.text = "You're Fired!";
+            reset.SetActive(true);
 		}
 
 	}
@@ -179,27 +225,31 @@ public class Ticket_Spawn : MonoBehaviour
 
 
 	void OnCollisionEnter (Collision col)
-	{
-		for (int i = 0; i < order.Length; i++) {
+    {
+        for (int i = 0; i < order.Length; i++) {
 			if (order [i] == col.gameObject.GetComponent<Pizza_Controller> ().pizzatype) {
+                ticketNumber = i;
 				iscorrect = true;
 				tickets [i].SetActive (false);
 				order [i] = "done";
-				break;
+                break;
 			}
 			else {
+                ticketNumber = 0;
 				print ("nope");
 				iscorrect = false;
-			}
-		}
-		if (iscorrect == true && col.gameObject.tag == "dough") {
-            points = points + 1;
-            SetScoreText ();
-			Destroy (col.gameObject);
-		}  else if (iscorrect == false && col.gameObject.tag == "dough") {
+            }
+        }
+        if (iscorrect == true && col.gameObject.tag == "dough")
+        {
+            SetScoreText(ticketNumber);
+            Destroy(col.gameObject);
+        }
+        else if (iscorrect == false && col.gameObject.tag == "dough")
+        {
             strikes = strikes + 1;
-            SetScoreText ();
-			Destroy (col.gameObject);
-		}
-	}
+            SetScoreText(ticketNumber);
+            Destroy(col.gameObject);
+        }
+    }
 }
