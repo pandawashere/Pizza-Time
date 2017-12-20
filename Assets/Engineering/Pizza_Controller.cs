@@ -96,7 +96,7 @@ public class Pizza_Controller : MonoBehaviour
                     } else if (psauce == true && pcheese == true && proni == true && ppeppers == true && pbacon != true && pmush != true) {
                         active = roniandpeppers;
                         //pizzatype = "roniandpeppers";
-                    } else if (psauce == true && pcheese == true && proni == true && pmush == true && ppeppers != true && ppeppers != true) {
+                    } else if (psauce == true && pcheese == true && proni == true && pmush == true && ppeppers != true && pbacon != true) {
                         active = roniandmush;
                         //pizzatype = "roniandmush";
                     } else if (psauce == true && pcheese == true && proni == true && pbacon == true && pmush != true && ppeppers != true) {

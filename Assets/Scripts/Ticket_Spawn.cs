@@ -159,6 +159,7 @@ public class Ticket_Spawn : MonoBehaviour
 	void Start ()
 	{
         scoreText.text = "Score: " + totalScore;
+        winText.text = "Noob";
         StartCoroutine (TicketSpawn ());
 	}
 
@@ -181,8 +182,8 @@ public class Ticket_Spawn : MonoBehaviour
 	{
         switch (num) {
             case 0:
-                strikeText.text = "Strikes: " + strikes + "/3";
-                multiplier--;
+                totalScore = totalScore + (fullPoints * multiplier);
+                scoreText.text = "Score: " + totalScore;
                 break;
             case 1:
                 totalScore = totalScore + (fullPoints * multiplier);
@@ -205,24 +206,26 @@ public class Ticket_Spawn : MonoBehaviour
                 scoreText.text = "Score: " + totalScore;
                 break;
             case 6:
-                totalScore = totalScore + (fullPoints * multiplier);
-                scoreText.text = "Score: " + totalScore;
+                strikeText.text = "Strikes: " + strikes + "/3";
+                multiplier--;
                 break;
         }
 
         if (totalScore == 0) winText.text = "Noob";
-        else if (totalScore < 600) winText.text = "Novice";
-        else if (totalScore < 1200) winText.text = "Expert";
-        else if (totalScore < 1500) winText.text = "Master";
-        else if (totalScore == 1500) winText.text = "Pizza God";
-        else if (strikes == 3) {
+        else if (totalScore <= 600) winText.text = "Novice";
+        else if (totalScore <= 1200) winText.text = "Hobbyist";
+        else if (totalScore < 1800) winText.text = "Pro";
+        else if (totalScore == 1800) winText.text = "Pizza God";
+        if (strikes >= 3 && totalScore > 600) {
 			winText.text = "You're Fired!";
             reset.SetActive(true);
-		}
+		} else if (strikes >= 3 && totalScore <= 600) {
+            winText.text = "Why are you here?";
+            reset.SetActive(true);
+
+        }
 
 	}
-
-
 
 	void OnCollisionEnter (Collision col)
     {
@@ -235,7 +238,7 @@ public class Ticket_Spawn : MonoBehaviour
                 break;
 			}
 			else {
-                ticketNumber = 0;
+                ticketNumber = 6;
 				print ("nope");
 				iscorrect = false;
             }
@@ -243,6 +246,7 @@ public class Ticket_Spawn : MonoBehaviour
         if (iscorrect == true && col.gameObject.tag == "dough")
         {
             SetScoreText(ticketNumber);
+            points++;
             Destroy(col.gameObject);
         }
         else if (iscorrect == false && col.gameObject.tag == "dough")
@@ -251,5 +255,6 @@ public class Ticket_Spawn : MonoBehaviour
             SetScoreText(ticketNumber);
             Destroy(col.gameObject);
         }
+        if (points == 6) reset.SetActive(true);
     }
 }
