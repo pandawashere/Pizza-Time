@@ -220,7 +220,7 @@ public class Ticket_Spawn : MonoBehaviour
 			winText.text = "You're Fired!";
             reset.SetActive(true);
 		} else if (strikes >= 3 && totalScore <= 600) {
-            winText.text = "Why are you here?";
+            winText.text = "Just Leave";
             reset.SetActive(true);
 
         }
